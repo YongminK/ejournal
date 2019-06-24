@@ -9,7 +9,7 @@ class Navbar extends React.Component {
                     <Nav.Link href="#">Главная</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-1">Option 2</Nav.Link>
+                    <Nav.Link eventKey="link-1">Выход</Nav.Link>
                 </Nav.Item>
             </Nav>
         )
