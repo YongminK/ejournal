@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import allReducers from './reducers/index';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import configureStore from './store/configureStore';
 
-const store = createStore(allReducers);
+const store = configureStore();
 
 ReactDOM.render(
     <Provider store={store}>
@@ -18,7 +17,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-store.subscribe(() => {
-    
-})
-export default store;
+

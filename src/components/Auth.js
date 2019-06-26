@@ -1,7 +1,12 @@
 import React from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
+
 class Auth extends React.Component {
+    onLoginBtnClick() {
+        this.props.setLog();
+
+      }
     render() {
         return (
             <Container   style={{height: 100 + 'vh'}}>
@@ -16,7 +21,7 @@ class Auth extends React.Component {
                                 <Form.Label>Пароль</Form.Label>
                                 <Form.Control type='password' placeholder='Пароль' />
                             </Form.Group>
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary"  onClick={this.onLoginBtnClick.bind(this)}>
                                 Войти
                             </Button>
                         </Form>
