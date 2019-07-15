@@ -1,15 +1,16 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 class Navbar extends React.Component {
     render() {
         return (
             <Nav variant="pills" defaultActiveKey="/home">
                 <Nav.Item>
-                    <Nav.Link href="#">Главная</Nav.Link>
+                    <NavLink to='/home' className="nav-link" activeClassName="active">Главная</NavLink>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-1">Выход</Nav.Link>
+                    <NavLink to='#' className="nav-link" activeClassName="active">Выход</NavLink>
                 </Nav.Item>
             </Nav>
         )
