@@ -3,30 +3,33 @@ import {Container, Row, Col} from 'react-bootstrap';
 import ColumnSubject from './ColumnSubject';
 import ColumnStudent from './ColumnStudent';
 
+const STUDENTS = [1,2,3];
+console.log(STUDENTS);
 class Group extends React.Component{
     constructor(props){
         super();
         this.state = {
             isLoading: true,
-            students: [],
-            subjects: []
+            // students: [],
+            // subjects: []
+            students: STUDENTS
         };
     }
-    componentDidMount(){
-        fetch('https://my-json-server.typicode.com/YongminK/json-server/groups/0',{
-            method: 'GET'
-        })
-            .then((response) => response.json())
-            .then((responseJson) => {
-                this.setState({
-                    isLoading: false,
-                    students: responseJson.students
-                });
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }
+    // componentDidMount(){
+    //     fetch('https://my-json-server.typicode.com/YongminK/json-server/groups/0',{
+    //         method: 'GET'
+    //     })
+    //         .then((response) => response.json())
+    //         .then((responseJson) => {
+    //             this.setState({
+    //                 isLoading: false,
+    //                 students: responseJson.students
+    //             });
+    //         })
+    //         .catch((error) => {
+    //             console.error(error);
+    //         });
+    // }
     render(){
         return(
             <Container>

@@ -19,6 +19,7 @@ class ColumnStudent extends React.Component{
                     <i className="far fa-trash-alt"></i></span>  
                 </Link> 
             )} 
+            {console.log(this.props.students)}
             </>
         );
     }
