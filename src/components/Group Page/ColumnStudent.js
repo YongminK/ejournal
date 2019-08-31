@@ -1,26 +1,51 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import {Load} from '../../styles/Spinner-1.1s-200px.svg';
+let names = [];
 class ColumnStudent extends React.Component{
-    render(){
+    constructor(props){
+        super(props);
+        this.state = {
+            loading: true
+        };
+        this.loop = this.loop.bind(this);
+        this.timeout = this.timeout.bind(this);
+    }
+    loop() {
+
+        for(var i=0; i < this.props.students.length; i++){
+           if(this.props.groupNumber === this.props.students[i].group.number){
+                names[i] = {
+                    'firstName': this.props.students[i].firstName,
+                    'lastName':this.props.students[i].lastName,
+                    'secondName':this.props.students[i].secondName
+                };                
+           }            
+        }
+        this.render();
+    }
+
+    timeout(){
+        setTimeout(this.loop, 500);
+    }
+    componentWillMount(){
+        this.timeout();
+    }
+    render(){ 
+        if(names.length === 0){
+            return <Load />;
+            
+        }       
         return(
-            <>
-            {this.props.students.map((item, index) =>
-                <Link 
-                    className="list-group-item
-                    list-group-item-action 
-                    d-flex 
-                    justify-content-between
-                    align-items-center"
-                    to={"/student/"+item.id}
-                    key={index} >
-                    {item.secondName} {item.firstName} {item.lastName}
-                    <span className="badge badge-primary badge-pill"><i className="far fa-edit" ></i>
-                    <i className="far fa-trash-alt"></i></span>  
-                </Link> 
-            )} 
-            </>
+            <ul>            
+                {names.forEach((item) =>
+                    <li>
+                        {item.secondName +' '+ item.firstName +' '+ item.lastName}
+                    </li> 
+                )}             
+            </ul>
         );
+                
     }
 }
 export default ColumnStudent;
