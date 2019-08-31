@@ -16,6 +16,8 @@ class Auth extends React.Component {
         let data = {
             username:login,
             password:password
+
+
         };
         fetch('http://10.242.166.120:8080/auth',{
             method: 'POST',
@@ -23,12 +25,14 @@ class Auth extends React.Component {
         })
             .then((response) => {
                 this.setState({
+
                     isAuth: true                    
                 });
                 response.headers.forEach((val,key) => {
                     console.log(val,key);
                 });
                
+
             })
             .catch((error) => {
                 console.error(error);

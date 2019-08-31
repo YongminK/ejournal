@@ -3,15 +3,19 @@ import {Container, Row, Col} from 'react-bootstrap';
 import ColumnSubject from './ColumnSubject';
 import ColumnStudent from './ColumnStudent';
 
+const STUDENTS = [1,2,3];
+console.log(STUDENTS);
 class Group extends React.Component{
     constructor(props){
         super();
         this.state = {
             isLoading: true,
-            students: [],
-            subjects: []
+            // students: [],
+            // subjects: []
+            students: STUDENTS
         };
     }
+
     componentDidMount(){
         fetch('http://10.242.166.120:8080/students',{
             method: 'GET',
@@ -31,6 +35,7 @@ class Group extends React.Component{
                 console.error(error);
             });
     }
+
     render(){
         return(
             <Container>

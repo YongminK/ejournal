@@ -37,6 +37,7 @@ class ColumnStudent extends React.Component{
             
         }       
         return(
+
             <ul>            
                 {names.forEach((item) =>
                     <li>
@@ -44,6 +45,10 @@ class ColumnStudent extends React.Component{
                     </li> 
                 )}             
             </ul>
+
+      
+ 
+           
         );
                 
     }
