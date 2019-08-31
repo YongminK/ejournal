@@ -3,16 +3,13 @@ import {Container, Row, Col} from 'react-bootstrap';
 import ColumnSubject from './ColumnSubject';
 import ColumnStudent from './ColumnStudent';
 
-const STUDENTS = [1,2,3];
-console.log(STUDENTS);
 class Group extends React.Component{
     constructor(props){
         super();
         this.state = {
-            isLoading: true,
+            isLoading: true
             // students: [],
             // subjects: []
-            students: STUDENTS
         };
     }
 

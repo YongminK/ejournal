@@ -6,7 +6,8 @@ class ColumnStudent extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            loading: true
+            loading: true,
+            names: []
         };
         this.loop = this.loop.bind(this);
         this.timeout = this.timeout.bind(this);
@@ -22,7 +23,9 @@ class ColumnStudent extends React.Component{
                 };                
            }            
         }
-        this.render();
+        this.setState = {
+            names: names
+        }
     }
 
     timeout(){
@@ -32,14 +35,14 @@ class ColumnStudent extends React.Component{
         this.timeout();
     }
     render(){ 
-        if(names.length === 0){
-            return <Load />;
+        // if(names.length === 0){
+        //     return <Load />;
             
-        }       
+        // }       
         return(
 
             <ul>            
-                {names.forEach((item) =>
+                {this.names.forEach((item) =>
                     <li>
                         {item.secondName +' '+ item.firstName +' '+ item.lastName}
                     </li> 
