@@ -1,0 +1,20 @@
+.column-header{
+    display: flex;
+    justify-content: space-between;
+}
+.column-header h2{
+    margin-right: 10px;
+}
+.main-list{
+    margin: 0;
+    padding:0;
+    margin-top: 20px;
+}
+.col{
+    margin-right:5%;
+}
+@media (max-width: 768px){
+    .col{
+        margin-top: 10px;
+    }
+}

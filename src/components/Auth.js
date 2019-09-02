@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
-
+import axios from 'axios';
 
 class Auth extends React.Component {
     constructor(props){
